@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "bookmarks-app",
+  "alias": "rxo",
+  "routes": [
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ]
+}
