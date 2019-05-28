@@ -3,8 +3,23 @@ const ApiService = {
   getSchedule() {
     return fetch(`${config.TEST_API_ADDRESS}`, {
       headers: {}
-    }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    }).then(response =>
+      !response.ok
+        ? response.json().then(e => Promise.reject(e))
+        : response.json()
+    );
+  },
+  postLogin(username, password) {
+    return fetch(`${config.TEST_API_ADDRESS}`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({ username, password })
+    }).then(response =>
+      !response.ok
+        ? response.json().then(e => Promise.reject(e))
+        : response.json()
     );
   }
 };
