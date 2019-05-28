@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import LandingPage from './LandingPage/LandingPage';
 import './App.css';
 
-function App() {
-  return (
-    <div className='App'>
-      <h1>RXO app</h1>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return <Route path='/' component={LandingPage} />;
+  }
 }
 
 export default App;
