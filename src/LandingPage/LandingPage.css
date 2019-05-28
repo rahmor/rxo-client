@@ -1,0 +1,22 @@
+header {
+  color: #2a3132;
+}
+
+main {
+  height: 100%;
+}
+
+header h1 {
+  display: inline-block;
+  margin: 0;
+}
+
+header p {
+  display: inline-block;
+  text-align: right;
+}
+
+.rxo-lead {
+  text-align: center;
+  color: #763626;
+}
