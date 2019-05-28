@@ -13,7 +13,7 @@ const AddPrescription = () => {
           <input type='text' name='name' placeholder='Rx' />
           <br />
           <br />
-          <select multiple='true'>
+          <select multiple={true}>
             <option>Sunday</option>
             <option>Monday</option>
             <option>Tuesday</option>
@@ -22,7 +22,7 @@ const AddPrescription = () => {
             <option>Friday</option>
             <option>Saturday</option>
           </select>
-          <select multiple='true'>
+          <select multiple={true}>
             <option>6:00am</option>
             <option>7:00</option>
             <option>8:00</option>
