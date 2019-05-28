@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <>
         <Route only path='/' component={LandingPage} />
-        <Route path='/login' component={Dashboard} />
+        <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/addprescription' component={AddPrescription} />

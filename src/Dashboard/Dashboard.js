@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Heading from '../Heading/Heading';
+import './Dashboard.css';
 
 class Dashboard extends Component {
   state = {};

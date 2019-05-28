@@ -1,5 +1,6 @@
 import React from 'react';
 import Heading from '../Heading/Heading';
+import './AddPrescription.css';
 
 const AddPrescription = () => {
   return (
