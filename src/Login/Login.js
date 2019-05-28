@@ -6,7 +6,7 @@ class Login extends Component {
   handleLoginSubmit = event => {
     event.preventDefault();
     const { username, password } = event.target;
-    ApiService.postLogin(username, password).then(response =>
+    ApiService.postLogin(username.value, password.value).then(response =>
       console.log(response)
     );
   };

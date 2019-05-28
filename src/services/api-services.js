@@ -10,7 +10,7 @@ const ApiService = {
     );
   },
   postLogin(username, password) {
-    return fetch(`${config.TEST_API_ADDRESS}`, {
+    return fetch(`${config.TEST_API_ADDRESS}api/login`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
