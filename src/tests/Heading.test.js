@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Heading from '../src/Heading/Heading';
+import Heading from '../Heading/Heading';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
