@@ -10,7 +10,7 @@ class LandingPage extends Component {
       <>
         <header>
           <h1>RXO</h1>
-          <Link to={'/dashboard'}>Register</Link>
+          <Link to={'/register'}>Register</Link>
           <Link to={'/login'}>Login</Link>
           <Link to={'/dashboard'}>Demo</Link>
         </header>

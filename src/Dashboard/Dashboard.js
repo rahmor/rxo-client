@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import Heading from '../Heading/Heading';
+import { Link } from 'react-router-dom';
+import ApiService from '../services/api-services';
 import './Dashboard.css';
 
 class Dashboard extends Component {
   state = {};
+
+  componentDidMount() {
+    ApiService.getSchedule().then(data => console.log(data));
+  }
   render() {
     return (
       <>
         <header>
-          <Heading />
+          <Link to='/'>RXO</Link>
+          <Link to='/addprescription'>Add Prescription</Link>
         </header>
         <main>
           <section>

@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Route only path='/' component={LandingPage} />
+        <Route exact path='/' component={LandingPage} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/dashboard' component={Dashboard} />
