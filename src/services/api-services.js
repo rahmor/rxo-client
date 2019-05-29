@@ -36,6 +36,20 @@ const ApiService = {
         ? response.json().then(e => Promise.reject(e))
         : response.json()
     );
+  },
+
+  postPrescription(name, day, time) {
+    return fetch(`${config.TEST_API_ADDRESS}api/prescriptions`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({ name, day, time })
+    }).then(response =>
+      !response.ok
+        ? response.json().then(e => Promise.reject(e))
+        : response.json()
+    );
   }
 };
 
