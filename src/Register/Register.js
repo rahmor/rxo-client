@@ -6,8 +6,8 @@ import './Register.css';
 class Register extends Component {
   handleRegistrationSubmit = event => {
     event.preventDefault();
-    const { username, password } = event.taget;
-    ApiService.postRegistration(username, password).then(response =>
+    const { username, password } = event.target;
+    ApiService.postRegistration(username.value, password.value).then(response =>
       console.log(response)
     );
   };

@@ -9,6 +9,7 @@ const ApiService = {
         : response.json()
     );
   },
+
   postLogin(username, password) {
     return fetch(`${config.TEST_API_ADDRESS}api/login`, {
       method: 'POST',
@@ -22,8 +23,9 @@ const ApiService = {
         : response.json()
     );
   },
+
   postRegistration(username, password) {
-    return fetch(`${config.TEST_API_ADDRESS}api/registration`, {
+    return fetch(`${config.TEST_API_ADDRESS}api/register`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
