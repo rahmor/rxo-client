@@ -1,4 +1,6 @@
 import config from '../config';
+import AuthService from './auth-service';
+
 const ApiService = {
   getSchedule() {
     return fetch(`${config.TEST_API_ADDRESS}`, {
@@ -18,11 +20,15 @@ const ApiService = {
         'content-type': 'application/json'
       },
       body: JSON.stringify({ username, password })
-    }).then(response =>
-      !response.ok
-        ? response.json().then(e => Promise.reject(e))
-        : response.json()
-    );
+    })
+      .then(response =>
+        !response.ok
+          ? response.json().then(e => Promise.reject(e))
+          : response.json()
+      )
+      .then(jwtToken => {
+        AuthService.setToken(jwtToken);
+      });
   },
 
   postRegistration(username, password) {
