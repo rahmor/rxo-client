@@ -2,6 +2,7 @@ import config from '../config';
 const ApiService = {
   getSchedule() {
     return fetch(`${config.TEST_API_ADDRESS}`, {
+      mode: 'cors',
       headers: {}
     }).then(response =>
       !response.ok

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import Heading from '../Heading/Heading';
 import ApiService from '../services/api-services';
+import AuthService from '../services/auth-service;';
 import './Login.css';
 
 class Login extends Component {
   handleLoginSubmit = event => {
     event.preventDefault();
     const { username, password } = event.target;
-    ApiService.postLogin(username.value, password.value).then(response =>
-      console.log(response)
-    );
+    ApiService.postLogin(username.value, password.value)
+      .then(response => AuthService.setToken(response))
+      .catch(error => console.log(error));
   };
 
   render() {
