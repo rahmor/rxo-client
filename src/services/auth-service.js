@@ -5,8 +5,8 @@ const AuthService = {
     window.localStorage.setItem(config.TOKEN_KEY, token);
     return token;
   },
-  getToken(token) {
-    window.localStorage.setItem(config.TOKEN_KEY, token);
+  getToken() {
+    return window.localStorage.getItem(config.TOKEN_KEY);
   }
 };
 

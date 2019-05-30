@@ -13,7 +13,6 @@ class Register extends Component {
     };
   }
   handleRegistrationSubmit = event => {
-    //get notice your registration was successful and link to login page.
     event.preventDefault();
     const { username, password } = event.target;
     ApiService.postRegistration(username.value, password.value)
