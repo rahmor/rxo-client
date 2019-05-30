@@ -13,6 +13,20 @@ const store = {
     { id: 6, name: 'Metformin', user_id: 3 },
     { id: 7, name: 'Lipitor', user_id: 3 }
   ],
+  user_schedule: [
+    {
+      id: 1,
+      name: 'Vicodin',
+      days: ['Monday', 'Tuesday', 'Friday'],
+      times: ['9:00am', '10:00am', '2:00pm']
+    },
+    {
+      id: 2,
+      name: 'Simvastatin',
+      days: ['Monday', 'Tuesday', 'Friday'],
+      times: ['9:00am', '10:00am', '2:00pm']
+    }
+  ],
   schedules: [
     {
       id: 1,

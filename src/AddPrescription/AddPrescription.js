@@ -11,11 +11,11 @@ class AddPrescription extends Component {
     };
   }
   //send information to protected endpoint with auth header and key
-  //process info from form as you can have multiple types of data
+  //grab data from form and it's entered and store in state variables.
   addPrescriptionHandler = event => {
     event.preventDefault();
     const { name, day, time } = event.target;
-    console.log(event.target.day);
+    console.log(event.target.selectedOptions);
     ApiService.postPrescription(name.value, day.value, time.value).then(
       response => {
         console.log(response);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ScheduleItem from '../Components/ScheduleItem';
 import ApiService from '../services/api-services';
 import store from '../store.js';
 import './Dashboard.css';
@@ -11,24 +12,11 @@ class Dashboard extends Component {
       user: store.user,
       prescriptions: store.prescriptions,
       schedules: store.schedules,
-      //destructure store into properties
-      //Get today's date by locale or system
-      date: new Date(),
-      month: Date().split(' '),
-      day: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ]
+      user_schedule: store.user_schedule,
+      date: Date().split(' ')
     };
   }
 
-  //separate month from day and display date and date
-  //loop through time array
   componentDidMount() {
     ApiService.getSchedule().then(data => console.log(data));
   }
@@ -42,40 +30,27 @@ class Dashboard extends Component {
         </header>
         <main>
           <section className='month'>
-            <h4>{this.state.month[1]}</h4>
+            <h4>{this.state.date[1]}</h4>
           </section>
 
           <section className='day'>
-            <p>{this.state.day[this.state.date.getDay()]}</p>
+            <p>{this.state.date[0]}</p>
           </section>
 
           <section className='date'>
-            <p>{this.state.date.getDate()}</p>
+            <p>{this.state.date[2]}</p>
           </section>
-
-          <section>
-            <p>
-              8:00am <span>RX</span>
-              <span>RX</span>
-              <span>RX</span>
-            </p>
-            <p>9:00am</p>
-            <p>
-              10:00am<span>RX</span>
-              <span>RX</span>
-              <span>RX</span>
-            </p>
-            <p>11:00am</p>
-            <p>
-              12:00am<span>RX</span>
-            </p>
-            <p>1:00pm</p>
-            <p>
-              2:00pm <span>RX</span>
-              <span>RX</span>
-            </p>
-            <p>3:00pm</p>
-          </section>
+          <ul>
+            {this.state.user_schedule.map(schedule => (
+              <li key={schedule.id}>
+                <ScheduleItem
+                  name={schedule.name}
+                  days={schedule.days}
+                  times={schedule.times}
+                />
+              </li>
+            ))}
+          </ul>
         </main>
       </>
     );
