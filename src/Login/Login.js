@@ -8,16 +8,17 @@ class Login extends Component {
     super(props);
     this.state = { error: null };
   }
-  //send user to dashboard or display wrong info.
-  //use history to user to history page.
+  //send user to dashboard or display errors
+  //use history to send to dashboard
+  //send credentials, once authenticated, send jwt and load up dashboard.
   handleLoginSubmit = event => {
     event.preventDefault();
     const { username, password } = event.target;
     ApiService.postLogin(username.value, password.value)
       .then(response => {
-        username.value = '';
-        password.value = '';
-        this.props.history.replace('/');
+        this.props.history.replace('/dashboard');
+        //if jwt exist and response has user id, then go to page with user id.
+        // this.props.history.replace('/dashboard/:id');
       })
       .catch(response => this.setState({ error: response.error }));
   };
@@ -38,6 +39,9 @@ class Login extends Component {
             <br />
             <input type='submit' value='LogIn' />
           </form>
+          <div role='alert'>
+            {this.state.error && <p className='red'>{this.state.error}</p>}
+          </div>
         </main>
       </>
     );
