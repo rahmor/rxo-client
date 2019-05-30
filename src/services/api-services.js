@@ -1,5 +1,4 @@
 import config from '../config';
-import AuthService from './auth-service';
 
 const ApiService = {
   getSchedule() {
@@ -31,14 +30,11 @@ const ApiService = {
         'content-type': 'application/json'
       },
       body: JSON.stringify({ username, password })
-    })
-      .then(response =>
-        !response.ok
-          ? response.json().then(e => Promise.reject(e))
-          : response.json()
-      )
-      .then(jwtToken => AuthService.setToken(jwtToken))
-      .then(response => response);
+    }).then(response =>
+      !response.ok
+        ? response.json().then(e => Promise.reject(e))
+        : response.json()
+    );
   },
 
   postRegistration(username, password) {
@@ -48,15 +44,11 @@ const ApiService = {
         'content-type': 'application/json'
       },
       body: JSON.stringify({ username, password })
-    })
-      .then(response =>
-        !response.ok
-          ? response.json().then(e => Promise.reject(e))
-          : response.json()
-      )
-      .then(jwtToken => {
-        AuthService.setToken(jwtToken);
-      });
+    }).then(response =>
+      !response.ok
+        ? response.json().then(e => Promise.reject(e))
+        : response.json()
+    );
   }
 };
 

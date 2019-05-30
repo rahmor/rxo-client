@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Heading from '../Heading/Heading';
 import ApiService from '../services/api-services';
+import AuthService from '../services/auth-service';
 import './Login.css';
 
 class Login extends Component {
@@ -16,11 +17,12 @@ class Login extends Component {
     const { username, password } = event.target;
     ApiService.postLogin(username.value, password.value)
       .then(response => {
+        AuthService.setToken(response.jwtToken);
         this.props.history.replace('/dashboard');
-        //if jwt exist and response has user id, then go to page with user id.
+        //then go to page with user id.
         // this.props.history.replace('/dashboard/:id');
       })
-      .catch(response => this.setState({ error: response.error }));
+      .catch(response => this.setState({ error: response }));
   };
 
   render() {
@@ -35,13 +37,13 @@ class Login extends Component {
             <br />
             <br />
             <input type='password' name='password' placeholder='Password' />
+            <div role='alert'>
+              {this.state.error && <p>{this.state.error}</p>}
+            </div>
             <br />
             <br />
             <input type='submit' value='LogIn' />
           </form>
-          <div role='alert'>
-            {this.state.error && <p className='red'>{this.state.error}</p>}
-          </div>
         </main>
       </>
     );
