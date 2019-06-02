@@ -9,19 +9,19 @@ class Login extends Component {
     super(props);
     this.state = { error: null };
   }
-  //send user to dashboard or display errors
   //use history to send to dashboard
-  //send credentials, once authenticated, send jwt and load up dashboard.
+  //improve form validation/a11y
   handleLoginSubmit = event => {
     event.preventDefault();
     const { username, password } = event.target;
     ApiService.postLogin(username.value, password.value)
       .then(response => {
-        AuthService.setToken(response.jwtToken);
-        const user_id = AuthService.getIdFromToken(response.jwtToken);
-        this.props.history.replace(`/dashboard/:${user_id}`);
+        AuthService.setToken(response.authToken);
+        this.props.history.replace(
+          `/dashboard/:${AuthService.getIdFromToken(response.authToken)}`
+        );
       })
-      .catch(response => this.setState({ error: response }));
+      .catch(response => this.setState({ error: response.error }));
   };
 
   render() {

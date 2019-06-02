@@ -29,7 +29,7 @@ const ApiService = {
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ user_name: username, user_password: password })
     }).then(response =>
       !response.ok
         ? response.json().then(e => Promise.reject(e))
