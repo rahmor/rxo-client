@@ -18,9 +18,8 @@ class Login extends Component {
     ApiService.postLogin(username.value, password.value)
       .then(response => {
         AuthService.setToken(response.jwtToken);
-        this.props.history.replace('/dashboard');
-        //then go to page with user id.
-        // this.props.history.replace('/dashboard/:id');
+        const user_id = AuthService.getIdFromToken(response.jwtToken);
+        this.props.history.replace(`/dashboard/:${user_id}`);
       })
       .catch(response => this.setState({ error: response }));
   };

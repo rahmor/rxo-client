@@ -15,7 +15,6 @@ class AddPrescription extends Component {
   addPrescriptionHandler = event => {
     event.preventDefault();
     const { name, day, time } = event.target;
-    console.log(event.target.selectedOptions);
     ApiService.postPrescription(name.value, day.value, time.value).then(
       response => {
         console.log(response);
