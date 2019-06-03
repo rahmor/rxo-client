@@ -9,7 +9,6 @@ class Login extends Component {
     super(props);
     this.state = { error: null };
   }
-  //use history to send to dashboard
   //improve form validation/a11y
   handleLoginSubmit = event => {
     event.preventDefault();

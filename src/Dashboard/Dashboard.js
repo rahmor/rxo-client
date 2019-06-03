@@ -18,7 +18,9 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    ApiService.getSchedule().then(data => console.log(data));
+    ApiService.getUserSchedule(this.props.match.params.id).then(response =>
+      console.log(response)
+    );
   }
 
   render() {
