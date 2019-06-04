@@ -7,20 +7,30 @@ class AddPrescription extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null
+      error: null,
+      rx_name: '',
+      day: '',
+      time: ''
     };
   }
-  //send information to protected endpoint with auth header and key
   //grab data from form and it's entered and store in state variables.
   addPrescriptionHandler = event => {
     event.preventDefault();
-    const { name, day, time } = event.target;
-    ApiService.postPrescription(name.value, day.value, time.value).then(
-      response => {
-        console.log(response);
-      }
-    );
+    const { rx_name, days, time } = this.state;
+    ApiService.postPrescription(rx_name, days, time).then(response => {});
   };
+
+  updateRx(rx) {
+    this.setState({ rx_name: rx });
+  }
+  updateDay(day) {
+    this.setState({ day: day });
+    day = '';
+  }
+  updateTime(time) {
+    this.setState({ time: time });
+  }
+
   render() {
     return (
       <>
@@ -29,45 +39,40 @@ class AddPrescription extends Component {
         </header>
         <main>
           <form onSubmit={event => this.addPrescriptionHandler(event)}>
-            <input type='text' name='name' placeholder='Rx' />
+            <div>
+              <label>Prescription</label>
+              <input
+                type='text'
+                name='name'
+                id='name'
+                placeholder='Metformin'
+                onChange={event => this.updateRx(event.target.value)}
+              />
+            </div>
             <br />
             <br />
-            <select multiple name='day'>
-              <option value='sunday'>Sunday</option>
-              <option value='monday'>Monday</option>
-              <option value='tuesday'>Tuesday</option>
-              <option value='wednesday'>Wednesday</option>
-              <option value='thursday'>Thursday</option>
-              <option value='friday'>Friday</option>
-              <option value='saturday'>Saturday</option>
-            </select>
-
-            <select name='time' multiple>
-              <option value='6:00'>6:00am</option>
-              <option>7:00</option>
-              <option>8:00</option>
-              <option>9:00</option>
-              <option>10:00</option>
-              <option>11:00</option>
-              <option>12:00pm</option>
-              <option>1:00</option>
-              <option>2:00</option>
-              <option>3:00</option>
-              <option>4:00</option>
-              <option>5:00</option>
-              <option>6:00</option>
-              <option>7:00</option>
-              <option>8:00</option>
-              <option>9:00</option>
-              <option>10:00</option>
-              <option>11:00</option>
-              <option>12:00am</option>
-              <option>1:00</option>
-              <option>2:00</option>
-              <option>3:00</option>
-              <option>4:00</option>
-              <option>5:00</option>
-            </select>
+            <div>
+              <label>Day</label>
+              <input
+                type='text'
+                name='day'
+                id='day'
+                placeholder='Wednesday'
+                onChange={event => this.updateDay(event.target.value)}
+              />
+            </div>
+            <br />
+            <br />
+            <div>
+              <label>Time</label>
+              <input
+                type='text'
+                name='time'
+                id='time'
+                placeholder='9:00am'
+                onChange={event => this.updateTime(event.target.value)}
+              />
+            </div>
             <br />
             <br />
             <input type='submit' value='Schedule' />

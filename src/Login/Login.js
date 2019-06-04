@@ -9,17 +9,17 @@ class Login extends Component {
     super(props);
     this.state = { error: null };
   }
-  //improve form validation/a11y
+
   handleLoginSubmit = event => {
     event.preventDefault();
     const { username, password } = event.target;
     ApiService.postLogin(username.value, password.value)
       .then(response => {
         AuthService.setToken(response.authToken);
-        this.props.history.replace(
-          `/dashboard/:${AuthService.getIdFromToken(response.authToken)}`
-        );
+        const id = AuthService.getIdFromToken(response.authToken);
+        return id;
       })
+      .then(id => this.props.history.replace(`/dashboard/${id}`))
       .catch(response => this.setState({ error: response.error }));
   };
 
