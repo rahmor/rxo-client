@@ -13,11 +13,11 @@ class AddPrescription extends Component {
       time: ''
     };
   }
-  //grab data from form and it's entered and store in state variables.
+
   addPrescriptionHandler = event => {
     event.preventDefault();
-    const { rx_name, days, time } = this.state;
-    ApiService.postPrescription(rx_name, days, time).then(response => {});
+    const { rx_name, day, time } = this.state;
+    ApiService.postPrescription(rx_name, day, time).then(response => {});
   };
 
   updateRx(rx) {

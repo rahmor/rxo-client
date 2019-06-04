@@ -15,7 +15,7 @@ const ApiService = {
   },
 
   postPrescription(rx_name, day, time) {
-    return fetch(`${config.TEST_API_ADDRESS}api/prescriptions`, {
+    return fetch(`${config.LIVE_API_ADDRESS}api/prescriptions`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
