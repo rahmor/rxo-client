@@ -2,25 +2,21 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ScheduleItem from '../Components/ScheduleItem';
 import ApiService from '../services/api-services';
-import store from '../store.js';
 import './Dashboard.css';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: store.user,
-      prescriptions: store.prescriptions,
-      schedules: store.schedules,
-      user_schedule: store.user_schedule,
+      user_schedule: [],
       date: Date().split(' ')
     };
   }
 
   componentDidMount() {
-    ApiService.getUserSchedule(this.props.match.params.id).then(response =>
-      console.log(response)
-    );
+    ApiService.getUserSchedule(this.props.match.params.id).then(response => {
+      this.setState({ user_schedule: response.schedule });
+    });
   }
 
   render() {
@@ -44,11 +40,11 @@ class Dashboard extends Component {
           </section>
           <ul>
             {this.state.user_schedule.map(schedule => (
-              <li key={schedule.id}>
+              <li key={schedule.prescription_id}>
                 <ScheduleItem
-                  name={schedule.name}
-                  days={schedule.days}
-                  times={schedule.times}
+                  name={schedule.rx_name}
+                  days={schedule.day}
+                  times={schedule.time}
                 />
               </li>
             ))}
