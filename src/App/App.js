@@ -10,13 +10,13 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <>
+      <div className='container'>
         <Route exact path='/' component={LandingPage} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/dashboard/:id' component={Dashboard} />
         <Route path='/addprescription' component={AddPrescription} />
-      </>
+      </div>
     );
   }
 }

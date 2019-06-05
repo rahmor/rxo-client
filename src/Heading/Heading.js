@@ -1,6 +1,7 @@
 import React from 'react';
+import './Heading.css';
 const Heading = () => {
-  return <h1>RXOn-Time</h1>;
+  return <h3>RXOn-Time</h3>;
 };
 
 export default Heading;

@@ -1,22 +1,47 @@
-header {
-  color: #2a3132;
-}
-
-main {
+.landing-container {
   height: 100%;
+  background-color: #336b87;
 }
 
-header h1 {
-  display: inline-block;
-  margin: 0;
+.landing-header {
+  position: relative;
+  margin-top: 10px;
 }
 
-header p {
-  display: inline-block;
-  text-align: right;
+.landing-header a {
+  margin: 0 5px 0 0;
 }
 
-.rxo-lead {
+.landing-header-title {
+  display: inline;
+  color: #90afc5;
+  margin: 10px 0 0 10px;
+}
+
+.landing-header-links {
+  position: absolute;
+  right: 0;
+  top: 0.75em;
+  color: #90afc5;
+}
+
+a:visited {
+  color: #90afc5;
+}
+
+.landing-lead {
   text-align: center;
-  color: #763626;
+  color: white;
+  background-color: #2a3132;
+}
+
+.landing-lead p {
+  margin-top: 1px;
+  line-height: 1.7em;
+}
+
+.landing-rx-ontime {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 1px;
 }
