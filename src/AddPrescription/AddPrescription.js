@@ -33,14 +33,19 @@ class AddPrescription extends Component {
 
   render() {
     return (
-      <>
+      <div className='addrx-container'>
         <header>
           <Heading />
         </header>
         <main>
-          <form onSubmit={event => this.addPrescriptionHandler(event)}>
+          <form
+            className='addrx-form'
+            onSubmit={event => this.addPrescriptionHandler(event)}
+          >
             <div>
-              <label>Prescription</label>
+              <label className='addrx-input' htmlFor='name'>
+                Prescription
+              </label>
               <input
                 type='text'
                 name='name'
@@ -52,7 +57,9 @@ class AddPrescription extends Component {
             <br />
             <br />
             <div>
-              <label>Day</label>
+              <label className='addrx-input' htmlFor='day'>
+                Day
+              </label>
               <input
                 type='text'
                 name='day'
@@ -64,7 +71,9 @@ class AddPrescription extends Component {
             <br />
             <br />
             <div>
-              <label>Time</label>
+              <label className='addrx-input' htmlFor='time'>
+                Time
+              </label>
               <input
                 type='text'
                 name='time'
@@ -75,10 +84,10 @@ class AddPrescription extends Component {
             </div>
             <br />
             <br />
-            <input type='submit' value='Schedule' />
+            <input className='addrx-submit' type='submit' value='Schedule' />
           </form>
         </main>
-      </>
+      </div>
     );
   }
 }

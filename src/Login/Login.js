@@ -25,25 +25,46 @@ class Login extends Component {
 
   render() {
     return (
-      <>
-        <header>
+      <div className='login-container'>
+        <header role='banner'>
           <Heading />
         </header>
-        <main>
-          <form onSubmit={event => this.handleLoginSubmit(event)}>
-            <input type='text' name='username' placeholder='Name' />
+        <main role='main'>
+          <form
+            className='login-form'
+            onSubmit={event => this.handleLoginSubmit(event)}
+          >
+            <label className='login-input' htmlFor='username'>
+              Name
+            </label>
+            <input
+              type='text'
+              id='username'
+              name='username'
+              placeholder='Name'
+            />
             <br />
             <br />
-            <input type='password' name='password' placeholder='Password' />
+            <label className='login-input' htmlFor='password'>
+              Password
+            </label>
+            <input
+              type='password'
+              id='password'
+              name='password'
+              placeholder='Password'
+            />
             <div role='alert'>
-              {this.state.error && <p>{this.state.error}</p>}
+              {this.state.error && (
+                <p style={{ color: 'red' }}>{this.state.error}</p>
+              )}
             </div>
             <br />
             <br />
-            <input type='submit' value='LogIn' />
+            <input className='login-submit' type='submit' value='LogIn' />
           </form>
         </main>
-      </>
+      </div>
     );
   }
 }

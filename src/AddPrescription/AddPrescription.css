@@ -1,0 +1,43 @@
+.addrx-form {
+  width: 75%;
+  margin: auto;
+  border: 2px solid #336b87;
+  color: white;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.addrx-input {
+  color: #336b87;
+}
+
+.addrx-submit {
+  color: #ffffff;
+  background-color: #336b87;
+  border-color: #336b87;
+  margin-bottom: 5px;
+}
+
+.addrx-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.addrx-container::after {
+  content: '';
+  background: url('../images/mountain-wildflowers.jpg');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  filter: blur(2px);
+}

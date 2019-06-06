@@ -24,17 +24,36 @@ class Register extends Component {
 
   render() {
     return (
-      <>
+      <div className='register-container'>
         <header>
           <Heading />
         </header>
         <main>
           <p>Register for the site</p>
-          <form onSubmit={event => this.handleRegistrationSubmit(event)}>
-            <input type='text' name='username' placeholder='Name' />
+          <form
+            className='register-form'
+            onSubmit={event => this.handleRegistrationSubmit(event)}
+          >
+            <label className='register-input' htmlFor='username'>
+              Name
+            </label>
+            <input
+              type='text'
+              name='username'
+              id='username'
+              placeholder='Name'
+            />
             <br />
             <br />
-            <input type='password' name='password' placeholder='Password' />
+            <label className='register-input' htmlFor='password'>
+              Password
+            </label>
+            <input
+              type='password'
+              name='password'
+              id='username'
+              placeholder='Password'
+            />
             <div role='alert'>
               {(this.state.error && <p>{this.state.error}</p>) ||
                 (this.state.login && (
@@ -46,10 +65,10 @@ class Register extends Component {
             </div>
             <br />
             <br />
-            <input type='submit' value='Register' />
+            <input className='register-submit' type='submit' value='Register' />
           </form>
         </main>
-      </>
+      </div>
     );
   }
 }

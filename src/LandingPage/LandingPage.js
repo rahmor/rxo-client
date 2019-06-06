@@ -7,18 +7,20 @@ class LandingPage extends Component {
   render() {
     return (
       <div className='landing-container'>
-        <header className='landing-header'>
-          <h1 className='landing-header-title'>RXO</h1>
-          <span className='landing-header-links'>
-            <Link to={'/register'}>Register</Link>
-            <Link to={'/login'}>Login</Link>
-            <Link to={'/dashboard'}>Demo</Link>
-          </span>
+        <header role='banner' className='landing-header'>
+          <i>
+            <h1 className='landing-header-title'>RXO</h1>
+            <span className='landing-header-links'>
+              <Link to={'/register'}>Register</Link>
+              <Link to={'/login'}>Login</Link>
+              <Link to={'/dashboard'}>Demo</Link>
+            </span>
+          </i>
         </header>
-        <main>
+        <main role='main'>
           <section className='landing-lead'>
             {/* mortar and pestle shadow color*/}
-            <h3 className='landing-rx-ontime'>RXOn-Time</h3>
+            <h3 className='landing-lead-title'>RXOn-Time</h3>
             <p>
               allows you to take control of your prescription pill regiment. A
               typical pill box orders pills by date, but what if you have take
