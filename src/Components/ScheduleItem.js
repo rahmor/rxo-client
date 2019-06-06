@@ -2,10 +2,10 @@ import React from 'react';
 
 const ScheduleItem = props => {
   return (
-    <>
-      <p>{props.name}</p>
-      <p>{props.days}</p>
-    </>
+    <p>
+      <span>{props.name} on </span>
+      <spap>{props.days}</spap>
+    </p>
   );
 };
 
