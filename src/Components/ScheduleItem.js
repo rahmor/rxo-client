@@ -5,7 +5,6 @@ const ScheduleItem = props => {
     <>
       <p>{props.name}</p>
       <p>{props.days}</p>
-      <p>{props.times}</p>
     </>
   );
 };

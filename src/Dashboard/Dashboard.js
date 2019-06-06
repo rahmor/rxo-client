@@ -21,36 +21,25 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <>
-        <header>
-          <Link to='/'>RXO</Link>
+      <div className='dashboard-container'>
+        <header className='dashboard-header'>
           <Link to='/addprescription'>Add Prescription</Link>
         </header>
         <main>
-          <section className='month'>
+          <section className='dashboard-current'>
             <h4>{this.state.date[1]}</h4>
-          </section>
-
-          <section className='day'>
             <p>{this.state.date[0]}</p>
-          </section>
-
-          <section className='date'>
             <p>{this.state.date[2]}</p>
           </section>
           <ul>
             {this.state.user_schedule.map(schedule => (
               <li key={schedule.prescription_id}>
-                <ScheduleItem
-                  name={schedule.rx_name}
-                  days={schedule.day}
-                  times={schedule.time}
-                />
+                <ScheduleItem name={schedule.rx_name} days={schedule.day} />
               </li>
             ))}
           </ul>
         </main>
-      </>
+      </div>
     );
   }
 }

@@ -1,9 +1,13 @@
-.day {
-  text-align: center;
+.dashboard-container {
 }
 
-.date {
+.dashboard-current {
   text-align: center;
+  background-color: #90afc5;
+}
+
+.dashboard-header {
+  margin: 1em 0 0 1em;
 }
 
 ul {

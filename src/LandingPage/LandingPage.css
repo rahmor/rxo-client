@@ -34,8 +34,9 @@ a:visited {
 
 .landing-lead {
   text-align: center;
-  color: white;
+  color: #ffffff;
   background-color: #763626;
+  background: url('../images/mountain-wildflowers.jpg');
 }
 
 .landing-lead p {
