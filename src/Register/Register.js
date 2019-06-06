@@ -51,7 +51,7 @@ class Register extends Component {
             <input
               type='password'
               name='password'
-              id='username'
+              id='password'
               placeholder='Password'
             />
             <div role='alert'>
