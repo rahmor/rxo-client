@@ -9,15 +9,14 @@ class AddPrescription extends Component {
     this.state = {
       error: null,
       rx_name: '',
-      day: '',
-      time: ''
+      day: ''
     };
   }
 
   addPrescriptionHandler = event => {
     event.preventDefault();
-    const { rx_name, day, time } = this.state;
-    ApiService.postPrescription(rx_name, day, time).then(response => {});
+    const { rx_name, day } = this.state;
+    ApiService.postPrescription(rx_name, day).then(response => {});
   };
 
   updateRx(rx) {
@@ -66,20 +65,6 @@ class AddPrescription extends Component {
                 id='day'
                 placeholder='Wednesday'
                 onChange={event => this.updateDay(event.target.value)}
-              />
-            </div>
-            <br />
-            <br />
-            <div>
-              <label className='addrx-input' htmlFor='time'>
-                Time
-              </label>
-              <input
-                type='text'
-                name='time'
-                id='time'
-                placeholder='9:00am'
-                onChange={event => this.updateTime(event.target.value)}
               />
             </div>
             <br />

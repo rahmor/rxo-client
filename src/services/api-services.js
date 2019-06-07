@@ -14,14 +14,14 @@ const ApiService = {
     );
   },
 
-  postPrescription(rx_name, day, time) {
+  postPrescription(rx_name, day) {
     return fetch(`${config.LIVE_API_ADDRESS}api/prescriptions`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
         authorization: `bearer ${AuthService.getToken()}`
       },
-      body: JSON.stringify({ rx_name, day, time })
+      body: JSON.stringify({ rx_name, day })
     }).then(response =>
       !response.ok
         ? response.json().then(e => Promise.reject(e))
