@@ -17,7 +17,7 @@ class Register extends Component {
     const { username, password } = event.target;
     ApiService.postRegistration(username.value, password.value)
       .then(response => {
-        this.setState({ login: response.username });
+        this.setState({ login: response.message });
       })
       .catch(response => this.setState({ error: response.error }));
   };
@@ -57,9 +57,11 @@ class Register extends Component {
             <div role='alert'>
               {(this.state.error && <p>{this.state.error}</p>) ||
                 (this.state.login && (
-                  <p>
-                    You're registration was {this.state.login}.{' '}
-                    <Link to='/login'>Log In</Link>{' '}
+                  <p style={{ color: 'green' }}>
+                    {this.state.login}{' '}
+                    <Link style={{ color: 'green' }} to='/login'>
+                      Log In
+                    </Link>{' '}
                   </p>
                 ))}
             </div>

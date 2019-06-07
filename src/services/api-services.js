@@ -42,13 +42,13 @@ const ApiService = {
     );
   },
 
-  postRegistration(username, password) {
+  postRegistration(user_name, user_password) {
     return fetch(`${config.LIVE_API_ADDRESS}api/register`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ user_name, user_password })
     }).then(response =>
       !response.ok
         ? response.json().then(e => Promise.reject(e))

@@ -32,13 +32,13 @@ class Dashboard extends Component {
             <p>{this.state.date[2]}</p>
           </section>
           <section>
-            <ul className='dashboard-list'>
+            <div className='dashboard-list'>
               {this.state.user_schedule.map(schedule => (
-                <li key={schedule.prescription_id}>
+                <p key={schedule.prescription_id}>
                   <ScheduleItem name={schedule.rx_name} days={schedule.day} />
-                </li>
+                </p>
               ))}
-            </ul>
+            </div>
           </section>
         </main>
       </div>

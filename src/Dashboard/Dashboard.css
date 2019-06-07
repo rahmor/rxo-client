@@ -10,12 +10,8 @@
   margin: 1em 0 0 1em;
 }
 
-li:nth-child(odd) {
-  background: red;
-}
-
-li:nth-child(even) {
-  background: green;
+.dashboard-list {
+  text-align: center;
 }
 
 ul {
