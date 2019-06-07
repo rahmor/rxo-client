@@ -4,7 +4,7 @@ const ScheduleItem = props => {
   return (
     <p>
       <span>{props.name} on </span>
-      <spap>{props.days}</spap>
+      <span>{props.days}</span>
     </p>
   );
 };
