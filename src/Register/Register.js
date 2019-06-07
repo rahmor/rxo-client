@@ -55,7 +55,9 @@ class Register extends Component {
               placeholder='Password'
             />
             <div role='alert'>
-              {(this.state.error && <p>{this.state.error}</p>) ||
+              {(this.state.error && (
+                <p style={{ color: 'red' }}>{this.state.error}</p>
+              )) ||
                 (this.state.login && (
                   <p style={{ color: 'green' }}>
                     {this.state.login}{' '}

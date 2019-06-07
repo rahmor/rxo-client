@@ -13,7 +13,7 @@ class LandingPage extends Component {
             <span className='landing-header-links'>
               <Link to={'/register'}>Register</Link>
               <Link to={'/login'}>Login</Link>
-              <Link to={'/dashboard'}>Demo</Link>
+              <Link to={'/dashboard/1'}>Demo</Link>
             </span>
           </i>
         </header>

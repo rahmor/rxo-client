@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Heading from '../Heading/Heading';
 import ApiService from '../services/api-services';
+import AuthService from '../services/auth-service';
+import { Link } from 'react-router-dom';
+
 import './AddPrescription.css';
 
 class AddPrescription extends Component {
@@ -8,15 +11,19 @@ class AddPrescription extends Component {
     super(props);
     this.state = {
       error: null,
+      login: null,
       rx_name: '',
-      day: ''
+      day: '',
+      id: AuthService.getIdFromToken(AuthService.getToken())
     };
   }
 
   addPrescriptionHandler = event => {
     event.preventDefault();
     const { rx_name, day } = this.state;
-    ApiService.postPrescription(rx_name, day).then(response => {});
+    ApiService.postPrescription(rx_name, day).then(response => {
+      this.setState({ login: response.message });
+    });
   };
 
   updateRx(rx) {
@@ -30,6 +37,10 @@ class AddPrescription extends Component {
     this.setState({ time: time });
   }
 
+  // gotoDashboard = () => {
+  //   this.props.history.replace(`/dashboard/${this.state.id}`);
+  // };
+
   render() {
     return (
       <div className='addrx-container'>
@@ -37,6 +48,11 @@ class AddPrescription extends Component {
           <Heading />
         </header>
         <main>
+          {/* <section>
+            <Link style={{ color: 'green' }} to={`/dashboard/${this.id}`}>
+              Dashboard
+            </Link>{' '}
+          </section> */}
           <form
             className='addrx-form'
             onSubmit={event => this.addPrescriptionHandler(event)}
@@ -70,6 +86,9 @@ class AddPrescription extends Component {
             <br />
             <br />
             <input className='addrx-submit' type='submit' value='Schedule' />
+            {this.state.login && (
+              <p style={{ color: 'green' }}>{this.state.login} </p>
+            )}
           </form>
         </main>
       </div>
