@@ -48,11 +48,11 @@ class AddPrescription extends Component {
           <Heading />
         </header>
         <main>
-          {/* <section>
-            <Link style={{ color: 'green' }} to={`/dashboard/${this.id}`}>
+          <section>
+            <Link style={{ color: 'green' }} to={`/dashboard/${this.state.id}`}>
               Dashboard
             </Link>{' '}
-          </section> */}
+          </section>
           <form
             className='addrx-form'
             onSubmit={event => this.addPrescriptionHandler(event)}
