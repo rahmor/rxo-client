@@ -14,7 +14,7 @@ class AddPrescription extends Component {
       login: null,
       rx_name: '',
       day: '',
-      id: AuthService.getIdFromToken(AuthService.getToken())
+      id: props.id || AuthService.getIdFromToken(AuthService.getToken())
     };
   }
 
@@ -36,10 +36,6 @@ class AddPrescription extends Component {
   updateTime(time) {
     this.setState({ time: time });
   }
-
-  // gotoDashboard = () => {
-  //   this.props.history.replace(`/dashboard/${this.state.id}`);
-  // };
 
   render() {
     return (
