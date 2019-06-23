@@ -13,7 +13,6 @@ class LandingPage extends Component {
             <span className='landing-header-links'>
               <Link to={'/register'}>Register</Link>
               <Link to={'/login'}>Login</Link>
-              <Link to={'/dashboard/1'}>Demo</Link>
             </span>
           </i>
         </header>
@@ -29,6 +28,7 @@ class LandingPage extends Component {
               schedule and won't have to worry about whether or not you have to
               take that pill.
             </p>
+            <p>To Demo: Dunder Password: Password1234</p>
           </section>
         </main>
       </div>
