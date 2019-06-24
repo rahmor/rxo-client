@@ -28,7 +28,8 @@ class LandingPage extends Component {
               schedule and won't have to worry about whether or not you have to
               take that pill.
             </p>
-            <p>To Demo: Dunder Password: Password1234</p>
+            <p>UserName: Dunder </p>
+            <p>Password: Password1234</p>
           </section>
         </main>
       </div>
