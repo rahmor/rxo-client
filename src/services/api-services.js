@@ -3,7 +3,7 @@ import AuthService from './auth-service';
 
 const ApiService = {
   getUserSchedule(id) {
-    return fetch(`${config.LIVE_API_ADDRESS}api/prescriptions/${id}`, {
+    return fetch(`${config.TEST_API_ADDRESS}api/prescriptions/${id}`, {
       headers: {
         authorization: `bearer ${AuthService.getToken()}`
       }
@@ -15,7 +15,7 @@ const ApiService = {
   },
 
   postPrescription(rx_name, day) {
-    return fetch(`${config.LIVE_API_ADDRESS}api/prescriptions`, {
+    return fetch(`${config.TEST_API_ADDRESS}api/prescriptions`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -29,7 +29,7 @@ const ApiService = {
     );
   },
   postLogin(username, password) {
-    return fetch(`${config.LIVE_API_ADDRESS}api/login`, {
+    return fetch(`${config.TEST_API_ADDRESS}api/login`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -43,7 +43,7 @@ const ApiService = {
   },
 
   postRegistration(user_name, user_password) {
-    return fetch(`${config.LIVE_API_ADDRESS}api/register`, {
+    return fetch(`${config.TEST_API_ADDRESS}api/register`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
