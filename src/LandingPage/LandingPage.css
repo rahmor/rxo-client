@@ -2,13 +2,16 @@
 
 header {
   position: relative;
-  /* margin-top: 10px; */
   margin-bottom: 25px;
 }
 
-.landing-container {
+main {
   height: 100%;
-  background-color: #336b87;
+  display: flexbox;
+}
+
+.landing-page {
+  height: 100%;
 }
 
 .landing-header a {
@@ -16,30 +19,37 @@ header {
 }
 
 .landing-header-title {
-  display: inline;
-  color: #90afc5;
-  margin: 10px 0 0 10px;
+  display: block;
+  color: #336b87;
+  margin: 0 0 0 10px;
 }
 
 .landing-header-links {
   position: absolute;
   right: 0;
   top: 0.75em;
-  color: #90afc5;
+  color: #336b87;
 }
 
-a:visited {
-  color: #90afc5;
+.landing-header a:visited {
+  color: #336b87;
+}
+
+.landing-container {
+  height: 100%;
+  background-color: #763626;
+  background-color: #9cbce3;
 }
 
 .landing-lead {
+  height: 50%;
+  display: flexbox;
   margin: auto;
   text-align: center;
-  color: #ffffff;
-  background-color: #763626;
+  color: #c68739;
+
   width: 75%;
   border-radius: 5px;
-  background: url('../images/mountain-wildflowers.jpg');
 }
 
 .landing-lead p {
@@ -48,6 +58,7 @@ a:visited {
 }
 
 .landing-lead-title {
+  margin: 0px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 1px;
@@ -55,4 +66,12 @@ a:visited {
 
 /* large screen styling */
 @media screen and (min-width: 800px) {
+  .landing-container {
+    height: 100%;
+    background: url('../images/london-bigben-1500x850.jpg');
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    /* background-color: #763626; */
+    background-color: #9cbce3;
+  }
 }
