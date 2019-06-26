@@ -37,17 +37,19 @@ main {
 
 .landing-container {
   height: 100%;
+  background: url('../images/london-smallben.svg');
   background-color: #763626;
   background-color: #9cbce3;
 }
 
-.landing-lead {
-  height: 50%;
-  display: flexbox;
+.landing-container main .landing-lead {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   margin: auto;
   text-align: center;
   color: #c68739;
-
   width: 75%;
   border-radius: 5px;
 }

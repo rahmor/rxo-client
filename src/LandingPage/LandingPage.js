@@ -28,8 +28,6 @@ class LandingPage extends Component {
               <h2 className='landing-lead-title'>
                 Schedule | Track | Take Control
               </h2>
-              <p>UserName: Dunder </p>
-              <p>Password: Password1234</p>
             </section>
           </main>
         </div>
