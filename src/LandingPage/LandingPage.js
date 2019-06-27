@@ -17,18 +17,34 @@ class LandingPage extends Component {
               n-Time
             </h1>
             <span className='landing-header-links'>
-              <Link to={'/register'}>Register</Link>
-              <Link to={'/login'}>Login</Link>
+              <Link to={'/register'}>
+                <button id='register'>Register</button>
+              </Link>
+              <Link to={'/login'}>
+                <button id='login'>Login</button>
+              </Link>
             </span>
           </i>
         </header>
         <div className='landing-container'>
           <main role='main'>
             <section className='landing-lead'>
+              <h3>Get the tools to manage your prescriptions</h3>
               <h2 className='landing-lead-title'>
                 Schedule | Track | Take Control
               </h2>
+              <h2>That's RXO</h2>
+              <p id='clock'>
+                <span role='img' aria-label='clock'>
+                  &#128336;
+                </span>
+              </p>
             </section>
+            <div id='demo-button'>
+              <Link to={'/dashboard/1'}>
+                <button>Take a look</button>
+              </Link>
+            </div>
           </main>
         </div>
       </div>
