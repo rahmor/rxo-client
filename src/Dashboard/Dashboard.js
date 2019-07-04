@@ -23,7 +23,7 @@ class Dashboard extends Component {
     return (
       <div className='dashboard-container'>
         <header className='dashboard-header'>
-          <Link to='/addprescription'>Add Prescription</Link>
+          <Link to='/prescription'>Add Prescription</Link>
         </header>
         <main>
           <section className='dashboard-current'>
