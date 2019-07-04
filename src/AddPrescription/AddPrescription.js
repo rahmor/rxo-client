@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Heading from '../Heading/Heading';
 import ApiService from '../services/api-services';
 import AuthService from '../services/auth-service';
 import { Link } from 'react-router-dom';
@@ -40,9 +39,7 @@ class AddPrescription extends Component {
   render() {
     return (
       <div className='addrx-container'>
-        <header>
-          <Heading />
-        </header>
+        <header />
         <main>
           <section>
             <Link style={{ color: 'green' }} to={`/dashboard/${this.state.id}`}>
