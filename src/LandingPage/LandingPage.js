@@ -4,27 +4,26 @@ import './LandingPage.css';
 
 class LandingPage extends Component {
   state = {};
+
   render() {
     return (
       <div className='landing-page'>
         <header role='banner' className='landing-header'>
-          <i>
-            <h1 className='landing-header-title'>
-              RX-
-              <span role='img' aria-label='clock'>
-                &#128336;
-              </span>
-              n-Time
-            </h1>
-            <span className='landing-header-links'>
-              <Link to={'/register'}>
-                <button id='register'>Register</button>
-              </Link>
-              <Link to={'/login'}>
-                <button id='login'>Login</button>
-              </Link>
+          <h1 className='landing-header-title'>
+            RX-
+            <span role='img' aria-label='clock'>
+              &#128336;
             </span>
-          </i>
+            n-Time
+          </h1>
+          <span className='landing-header-links'>
+            <Link to={'/register'}>
+              <button id='register'>Register</button>
+            </Link>
+            <Link to={'/login'}>
+              <button id='login'>Login</button>
+            </Link>
+          </span>
         </header>
         <div className='landing-container'>
           <main role='main'>
@@ -41,7 +40,15 @@ class LandingPage extends Component {
               </p>
             </section>
             <div id='demo-button'>
-              <Link to={'/dashboard/1'}>
+              <Link
+                to={{
+                  pathname: '/login',
+                  user: {
+                    username: 'dunder',
+                    password: 'password1234'
+                  }
+                }}
+              >
                 <button>Take a look</button>
               </Link>
             </div>

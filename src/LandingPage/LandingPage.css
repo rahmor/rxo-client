@@ -1,81 +1,17 @@
 /* mobile styling */
-
-header {
-  position: relative;
-  margin-bottom: 25px;
-}
-
-main {
-  height: 100%;
-  display: flexbox;
-}
-
-.landing-page {
-  height: 100%;
-}
-
-.landing-header a {
-  margin: 0 5px 0 0;
-}
-
-.landing-header-title {
-  display: block;
-  color: #336b87;
-  margin: 0 0 0 10px;
-}
-
-.landing-header-links {
-  position: absolute;
-  right: 0;
-  top: 0.75em;
-  color: #336b87;
-}
-
-.landing-header a:visited {
-  color: #336b87;
-}
-
-.landing-container {
-  height: 100%;
-  background: url('../images/london-smallben.svg');
-  background-color: #9cbce3;
-}
-
-.landing-container main .landing-lead {
-  margin: auto;
-  text-align: center;
-  color: #c68739;
-  width: 75%;
-  border-radius: 5px;
-}
-
-#clock span {
-  font-size: 6em;
-}
-
-#demo-button {
-  text-align: center;
-}
-
-#demo-button button {
-  background-color: transparent;
-  border: 1px#c68739 solid;
-  color: #c68739;
-  padding: 0.75em;
-}
-
-/* medium screen styling */
-@media screen and (min-width: 500px) {
-  .landing-container {
-    height: 100%;
-    max-width: 100%;
-    background: url('../images/london-bigben-1500x850.jpg');
-    background-size: 100% 100%;
-    background-color: #9cbce3;
+@media screen and (max-width: 499px) {
+  header {
+    position: relative;
+    margin-bottom: 25px;
   }
 
-  .landing-header a {
-    margin: 0 5px 0 0;
+  main {
+    height: 100%;
+    display: flexbox;
+  }
+
+  .landing-page {
+    height: 100%;
   }
 
   .landing-header-title {
@@ -84,26 +20,107 @@ main {
     margin: 0 0 0 10px;
   }
 
+  .landing-header-links {
+    display: block;
+    margin: 0 auto;
+    color: #336b87;
+    text-align: center;
+  }
+
   .landing-header-links #register {
-    position: absolute;
-    right: 0;
-    top: 0.75em;
     background-color: #336b87;
     border: 0;
     color: white;
+    padding: 6px;
   }
 
   .landing-header-links #login {
-    position: absolute;
-    left: 20;
-    top: 0.75em;
     background-color: #336b87;
     border: 0;
     color: white;
+    margin-left: 20px;
+    padding: 6px;
   }
 
-  .landing-header a:visited {
+  .landing-container {
+    height: 100%;
+    background: url('../images/london-smallben.svg');
+    background-color: #9cbce3;
+  }
+
+  .landing-container main .landing-lead {
+    margin: auto;
+    text-align: center;
+    color: #c68739;
+    width: 75%;
+    border-radius: 5px;
+  }
+
+  #clock span {
+    font-size: 6em;
+  }
+
+  #demo-button {
+    text-align: center;
+  }
+
+  #demo-button button {
+    background-color: transparent;
+    border: 1px#c68739 solid;
+    color: #c68739;
+    padding: 0.75em;
+  }
+}
+
+/* medium and large screen styling */
+@media screen and (min-width: 500px) {
+  header {
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  main {
+    height: 100%;
+    display: flexbox;
+  }
+
+  .landing-page {
+    height: 100%;
+  }
+
+  .landing-header-title {
     color: #336b87;
+    margin: 10px 0 0 10px;
+  }
+
+  .landing-header-links {
+    position: absolute;
+    right: 5em;
+    top: 0.75em;
+    margin: 0 5px 0 0;
+  }
+
+  .landing-header-links #register {
+    background-color: #336b87;
+    border: 0;
+    color: white;
+    padding: 6px;
+  }
+
+  .landing-header-links #login {
+    background-color: #336b87;
+    border: 0;
+    color: white;
+    margin-left: 4px;
+    padding: 6px;
+  }
+
+  .landing-container {
+    height: 100%;
+    max-width: 100%;
+    background: url('../images/london-bigben-1500x850.jpg');
+    background-size: 100% 100%;
+    background-color: #9cbce3;
   }
 
   .landing-container main .landing-lead {
@@ -132,5 +149,23 @@ main {
 
   #clock span {
     display: none;
+  }
+
+  #demo-button {
+    text-align: center;
+  }
+
+  #demo-button button {
+    background-color: transparent;
+    border: 1px#c68739 solid;
+    color: #c68739;
+    padding: 0.75em;
+  }
+
+  #demo-button button {
+    background-color: transparent;
+    border: 1px#c68739 solid;
+    color: #c68739;
+    padding: 0.75em;
   }
 }

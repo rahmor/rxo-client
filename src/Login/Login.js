@@ -7,7 +7,16 @@ import './Login.css';
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { error: null };
+    this.state = {
+      error: null,
+      username: '',
+      password: ''
+    };
+  }
+
+  componentDidMount() {
+    let demoUser = this.props.location.user || {};
+    this.setState({ username: demoUser.username, password: demoUser.password });
   }
 
   handleLoginSubmit = event => {
@@ -63,6 +72,12 @@ class Login extends Component {
             <br />
             <input className='login-submit' type='submit' value='LogIn' />
           </form>
+          {this.state.username && (
+            <div>
+              <p>{`Demo user name: ${this.state.username}`}</p>
+              <p>{`Demo password: ${this.state.password}`}</p>
+            </div>
+          )}
         </main>
       </div>
     );
