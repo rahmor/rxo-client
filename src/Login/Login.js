@@ -9,20 +9,23 @@ class Login extends Component {
     super(props);
     this.state = {
       error: null,
-      username: '',
-      password: ''
+      demoUserName: '',
+      demoPassword: ''
     };
   }
 
   componentDidMount() {
     let demoUser = this.props.location.user || {};
-    this.setState({ username: demoUser.username, password: demoUser.password });
+    this.setState({
+      demoUserName: demoUser.username,
+      demoPassword: demoUser.password
+    });
   }
 
   handleLoginSubmit = event => {
     event.preventDefault();
     const { username, password } = event.target;
-    ApiService.postLogin(username.value, password.value)
+    ApiService.postLogin(username, password)
       .then(response => {
         AuthService.setToken(response.authToken);
         const id = AuthService.getIdFromToken(response.authToken);
@@ -44,17 +47,35 @@ class Login extends Component {
             >
               <div>
                 <label className='login-input' htmlFor='username'>
-                  Name*
+                  Username*
                 </label>
+                <input
+                  type='text'
+                  id='username'
+                  name='username'
+                  minLength='3'
+                  maxLength='25'
+                  required
+                  ref={this.username.value}
+                />
               </div>
-              <input type='text' id='username' name='username' />
               <br />
               <br />
-              <label className='login-input' htmlFor='password'>
-                Password*
-              </label>
-              <input type='password' id='password' name='password' />
-              <p>*required</p>
+              <div>
+                <label className='login-input' htmlFor='password'>
+                  Password*
+                </label>
+                <input
+                  type='password'
+                  id='password'
+                  name='password'
+                  minLength='3'
+                  maxLength='25'
+                  required
+                  ref={this.password.value}
+                />
+              </div>
+              <p>* = required</p>
               <div role='alert'>
                 {this.state.error && (
                   <p style={{ color: 'red' }}>{this.state.error}</p>
@@ -64,13 +85,13 @@ class Login extends Component {
               <br />
               <input className='login-submit' type='submit' value='LogIn' />
             </form>
-            {this.state.username && (
+            {this.state.demoUserName && (
               <div>
                 <p style={{ color: 'green' }}>{`Demo User Name: ${
-                  this.state.username
+                  this.state.demoUserName
                 }`}</p>
                 <p style={{ color: 'green' }}>{`Demo Password: ${
-                  this.state.password
+                  this.state.demoPassword
                 }`}</p>
               </div>
             )}
