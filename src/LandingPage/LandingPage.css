@@ -1,10 +1,5 @@
 /* mobile styling */
 @media screen and (max-width: 499px) {
-  header {
-    position: relative;
-    margin-bottom: 25px;
-  }
-
   main {
     height: 100%;
     display: flexbox;
@@ -12,34 +7,6 @@
 
   .landing-page {
     height: 100%;
-  }
-
-  .landing-header-title {
-    display: block;
-    color: #336b87;
-    margin: 0 0 0 10px;
-  }
-
-  .landing-header-links {
-    display: block;
-    margin: 0 auto;
-    color: #336b87;
-    text-align: center;
-  }
-
-  .landing-header-links #register {
-    background-color: #336b87;
-    border: 0;
-    color: white;
-    padding: 6px;
-  }
-
-  .landing-header-links #login {
-    background-color: #336b87;
-    border: 0;
-    color: white;
-    margin-left: 20px;
-    padding: 6px;
   }
 
   .landing-container {
@@ -74,11 +41,6 @@
 
 /* medium and large screen styling */
 @media screen and (min-width: 500px) {
-  header {
-    position: relative;
-    margin-bottom: 25px;
-  }
-
   main {
     height: 100%;
     display: flexbox;
@@ -86,33 +48,6 @@
 
   .landing-page {
     height: 100%;
-  }
-
-  .landing-header-title {
-    color: #336b87;
-    margin: 10px 0 0 10px;
-  }
-
-  .landing-header-links {
-    position: absolute;
-    right: 5em;
-    top: 0.75em;
-    margin: 0 5px 0 0;
-  }
-
-  .landing-header-links #register {
-    background-color: #336b87;
-    border: 0;
-    color: white;
-    padding: 6px;
-  }
-
-  .landing-header-links #login {
-    background-color: #336b87;
-    border: 0;
-    color: white;
-    margin-left: 4px;
-    padding: 6px;
   }
 
   .landing-container {

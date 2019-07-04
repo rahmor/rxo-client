@@ -1,43 +1,91 @@
-.login-form {
-  width: 75%;
-  margin: auto;
-  border: 2px solid #336b87;
-  color: white;
+/* mobile styling */
+@media screen and (max-width: 499px) {
+  .login-container::after {
+    content: '';
+    background: url('../images/london-smallben.svg');
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    filter: blur(2px);
+  }
+
+  .login-form {
+    width: 50vh;
+    margin: auto;
+    border: 2px solid #336b87;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .login-input {
+    color: #336b87;
+  }
+
+  .login-submit {
+    color: #ffffff;
+    background-color: #336b87;
+    border-color: #336b87;
+    margin-bottom: 5px;
+  }
+
+  .login-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    text-align: center;
+  }
 }
 
-label {
-  display: block;
-  margin-bottom: 10px;
-}
+/* medium and large screen styling */
+@media screen and (min-width: 500px) {
+  .login-form {
+    width: 50vh;
+    margin: auto;
+    border: 2px solid #336b87;
+  }
 
-.login-input {
-  color: #336b87;
-}
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
 
-.login-submit {
-  color: #ffffff;
-  background-color: #336b87;
-  border-color: #336b87;
-  margin-bottom: 5px;
-}
+  .login-input {
+    color: #336b87;
+  }
 
-.login-container {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
-  text-align: center;
-}
+  .login-submit {
+    color: #ffffff;
+    background-color: #336b87;
+    border-color: #336b87;
+    margin-bottom: 5px;
+  }
 
-.login-container::after {
-  content: '';
-  background: url('../images/mountain-wildflowers.jpg');
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-  filter: blur(2px);
+  .login-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    text-align: center;
+  }
+
+  .login-container::after {
+    content: '';
+    background: url('../images/london-bigben-1500x850.jpg');
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    filter: blur(2px);
+  }
 }

@@ -34,52 +34,46 @@ class Login extends Component {
 
   render() {
     return (
-      <div className='login-container'>
-        <header role='banner'>
-          <Heading />
-        </header>
-        <main role='main'>
-          <form
-            className='login-form'
-            onSubmit={event => this.handleLoginSubmit(event)}
-          >
-            <label className='login-input' htmlFor='username'>
-              Name
-            </label>
-            <input
-              type='text'
-              id='username'
-              name='username'
-              placeholder='Name'
-            />
-            <br />
-            <br />
-            <label className='login-input' htmlFor='password'>
-              Password
-            </label>
-            <input
-              type='password'
-              id='password'
-              name='password'
-              placeholder='Password'
-            />
-            <div role='alert'>
-              {this.state.error && (
-                <p style={{ color: 'red' }}>{this.state.error}</p>
-              )}
-            </div>
-            <br />
-            <br />
-            <input className='login-submit' type='submit' value='LogIn' />
-          </form>
-          {this.state.username && (
-            <div>
-              <p>{`Demo user name: ${this.state.username}`}</p>
-              <p>{`Demo password: ${this.state.password}`}</p>
-            </div>
-          )}
-        </main>
-      </div>
+      <>
+        <Heading />
+        <div className='login-container'>
+          <main role='main'>
+            <form
+              className='login-form'
+              onSubmit={event => this.handleLoginSubmit(event)}
+            >
+              <label className='login-input' htmlFor='username'>
+                Name
+              </label>
+              <input type='text' id='username' name='username' />
+              <br />
+              <br />
+              <label className='login-input' htmlFor='password'>
+                Password
+              </label>
+              <input type='password' id='password' name='password' />
+              <div role='alert'>
+                {this.state.error && (
+                  <p style={{ color: 'red' }}>{this.state.error}</p>
+                )}
+              </div>
+              <br />
+              <br />
+              <input className='login-submit' type='submit' value='LogIn' />
+            </form>
+            {this.state.username && (
+              <div>
+                <p style={{ color: 'green' }}>{`Demo User Name: ${
+                  this.state.username
+                }`}</p>
+                <p style={{ color: 'green' }}>{`Demo password: ${
+                  this.state.password
+                }`}</p>
+              </div>
+            )}
+          </main>
+        </div>
+      </>
     );
   }
 }
