@@ -1,9 +1,12 @@
 @media screen and (max-width: 499px) {
+  .Prescription__Header {
+    color: #336b87;
+  }
   .addrx-form {
-    width: 75%;
+    width: 50vh;
     margin: auto;
     border: 2px solid #336b87;
-    color: white;
+    color: #336b87;
   }
 
   label {
@@ -42,14 +45,21 @@
     z-index: -1;
     filter: blur(2px);
   }
+
+  .Prescription__day_list {
+    background-color: white;
+  }
 }
 
 @media screen and (min-width: 500px) {
+  .Prescription__Header {
+    color: #336b87;
+  }
   .addrx-form {
-    width: 75%;
+    width: 50vh;
     margin: auto;
     border: 2px solid #336b87;
-    color: white;
+    color: #336b87;
   }
 
   label {
@@ -87,5 +97,9 @@
     position: absolute;
     z-index: -1;
     filter: blur(2px);
+  }
+
+  .Prescription__day_list {
+    background-color: white;
   }
 }

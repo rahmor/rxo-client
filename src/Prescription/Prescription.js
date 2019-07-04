@@ -59,13 +59,14 @@ class AddPrescription extends Component {
             >
               <div>
                 <label className='addrx-input' htmlFor='name'>
-                  Prescription
+                  Prescription*
                 </label>
                 <input
                   type='text'
                   name='name'
                   id='name'
                   placeholder='Metformin'
+                  required
                   onChange={event => this.updateRx(event.target.value)}
                 />
               </div>
@@ -73,16 +74,25 @@ class AddPrescription extends Component {
               <br />
               <div>
                 <label className='addrx-input' htmlFor='day'>
-                  Day
+                  Day*
                 </label>
-                <input
-                  type='text'
-                  name='day'
+                <select
+                  className='Prescription__day_list'
                   id='day'
-                  placeholder='Wednesday'
+                  required
                   onChange={event => this.updateDay(event.target.value)}
-                />
+                >
+                  <option value=''>--Please Select an Option--</option>
+                  <option value='Sunday'>Sunday</option>
+                  <option value='Monday'>Monday</option>
+                  <option value='Tuesday'>Tuesday</option>
+                  <option value='Wednesday'>Wednesday</option>
+                  <option value='Thursday'>Thursday</option>
+                  <option value='Friday'>Friday</option>
+                  <option value='Saturday'>Saturday</option>
+                </select>
               </div>
+              <p>* = required</p>
               <br />
               <br />
               <input className='addrx-submit' type='submit' value='Schedule' />
