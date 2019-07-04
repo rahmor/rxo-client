@@ -25,7 +25,7 @@ class Login extends Component {
   handleLoginSubmit = event => {
     event.preventDefault();
     const { username, password } = event.target;
-    ApiService.postLogin(username, password)
+    ApiService.postLogin(username.value, password.value)
       .then(response => {
         AuthService.setToken(response.authToken);
         const id = AuthService.getIdFromToken(response.authToken);
@@ -41,6 +41,7 @@ class Login extends Component {
         <Heading />
         <div className='login-container'>
           <main role='main'>
+            <h3>Log In</h3>
             <form
               className='login-form'
               onSubmit={event => this.handleLoginSubmit(event)}
@@ -56,7 +57,6 @@ class Login extends Component {
                   minLength='3'
                   maxLength='25'
                   required
-                  ref={this.username.value}
                 />
               </div>
               <br />
@@ -72,7 +72,6 @@ class Login extends Component {
                   minLength='3'
                   maxLength='25'
                   required
-                  ref={this.password.value}
                 />
               </div>
               <p>* = required</p>

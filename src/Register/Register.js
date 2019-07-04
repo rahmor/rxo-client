@@ -24,36 +24,52 @@ class Register extends Component {
 
   render() {
     return (
-      <div className='register-container'>
-        <header>
-          <Heading />
-        </header>
-        <main>
-          <p>Register for the site</p>
-          <form
-            className='register-form'
-            onSubmit={event => this.handleRegistrationSubmit(event)}
-          >
-            <label className='register-input' htmlFor='username'>
-              Name
-            </label>
-            <input
-              type='text'
-              name='username'
-              id='username'
-              placeholder='Name'
-            />
-            <br />
-            <br />
-            <label className='register-input' htmlFor='password'>
-              Password
-            </label>
-            <input
-              type='password'
-              name='password'
-              id='password'
-              placeholder='Password'
-            />
+      <>
+        <Heading />
+        <div className='register-container'>
+          <main>
+            <h3>Register</h3>
+            <form
+              className='register-form'
+              onSubmit={event => this.handleRegistrationSubmit(event)}
+            >
+              <div>
+                <label className='register-input' htmlFor='username'>
+                  Username*
+                </label>
+                <input
+                  type='text'
+                  name='username'
+                  id='username'
+                  minLength='3'
+                  maxLength='25'
+                  required
+                />
+              </div>
+              <br />
+              <br />
+              <div>
+                <label className='register-input' htmlFor='password'>
+                  Password*
+                </label>
+                <input
+                  type='password'
+                  name='password'
+                  id='password'
+                  minLength='3'
+                  maxLength='25'
+                  required
+                />
+              </div>
+              <p>* = required</p>
+              <br />
+              <br />
+              <input
+                className='register-submit'
+                type='submit'
+                value='Register'
+              />
+            </form>
             <div role='alert'>
               {(this.state.error && (
                 <p style={{ color: 'red' }}>{this.state.error}</p>
@@ -67,12 +83,9 @@ class Register extends Component {
                   </p>
                 ))}
             </div>
-            <br />
-            <br />
-            <input className='register-submit' type='submit' value='Register' />
-          </form>
-        </main>
-      </div>
+          </main>
+        </div>
+      </>
     );
   }
 }
