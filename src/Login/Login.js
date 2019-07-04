@@ -42,16 +42,19 @@ class Login extends Component {
               className='login-form'
               onSubmit={event => this.handleLoginSubmit(event)}
             >
-              <label className='login-input' htmlFor='username'>
-                Name
-              </label>
+              <div>
+                <label className='login-input' htmlFor='username'>
+                  Name*
+                </label>
+              </div>
               <input type='text' id='username' name='username' />
               <br />
               <br />
               <label className='login-input' htmlFor='password'>
-                Password
+                Password*
               </label>
               <input type='password' id='password' name='password' />
+              <p>*required</p>
               <div role='alert'>
                 {this.state.error && (
                   <p style={{ color: 'red' }}>{this.state.error}</p>
@@ -66,7 +69,7 @@ class Login extends Component {
                 <p style={{ color: 'green' }}>{`Demo User Name: ${
                   this.state.username
                 }`}</p>
-                <p style={{ color: 'green' }}>{`Demo password: ${
+                <p style={{ color: 'green' }}>{`Demo Password: ${
                   this.state.password
                 }`}</p>
               </div>
