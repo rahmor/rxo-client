@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ScheduleItem from '../Components/ScheduleItem';
+import ScheduleItem from '../ScheduleItem/ScheduleItem';
 import ApiService from '../services/api-services';
 import './Dashboard.css';
 
