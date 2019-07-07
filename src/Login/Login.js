@@ -28,6 +28,9 @@ class Login extends Component {
     ApiService.postLogin(username.value, password.value)
       .then(response => {
         AuthService.setToken(response.authToken);
+        return response;
+      })
+      .then(response => {
         const id = AuthService.getIdFromToken(response.authToken);
         return id;
       })
