@@ -23,20 +23,29 @@ class Dashboard extends Component {
     return (
       <div className='dashboard-container'>
         <header className='dashboard-header'>
-          <Link to='/prescription'>Add Prescription</Link>
-        </header>
+          <h1 className='dashboard-header-title'>
+            RX-
+            <span role='img' aria-label='clock'>
+              &#128336;
+            </span>
+            n-Time
+          </h1>
+        </header>{' '}
         <main>
           <section className='dashboard-current'>
-            <h4>{this.state.date[1]}</h4>
-            <p>{this.state.date[0]}</p>
-            <p>{this.state.date[2]}</p>
+            <span className='dashboard-date'>{this.state.date[1]}</span>
+            <span className='dashboard-date'>{this.state.date[0]}</span>
+            <span className='dashboard-date'>{this.state.date[2]}</span>
+            <button className='dashboard-prescription-button'>
+              <Link to='/prescription'>Add Prescription</Link>
+            </button>
           </section>
           <section>
             <div className='dashboard-list'>
               {this.state.user_schedule.map(schedule => (
-                <p key={schedule.prescription_id}>
+                <div key={schedule.prescription_id}>
                   <ScheduleItem name={schedule.rx_name} days={schedule.day} />
-                </p>
+                </div>
               ))}
             </div>
           </section>

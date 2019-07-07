@@ -1,11 +1,15 @@
 import React from 'react';
+import './ScheduleItem.css';
 
 const ScheduleItem = props => {
   return (
-    <>
-      <span>{props.name} on </span>
-      <span>{props.days}</span>
-    </>
+    <p className='schedule-list-item'>
+      <span>
+        {props.days}
+        {': '}
+      </span>
+      <span>{props.name}</span>
+    </p>
   );
 };
 

@@ -1,19 +1,21 @@
-.dashboard-container {
+.dashboard-current {
+  background-color: #90afc5;
+  overflow: auto;
 }
 
-.dashboard-current {
-  text-align: center;
-  background-color: #90afc5;
+.dashboard-date {
+  padding: 0 4px 0 4px;
+}
+
+.dashboard-prescription-button {
+  float: right;
 }
 
 .dashboard-header {
-  margin: 1em 0 0 1em;
+  text-align: center;
+  color: #336b87;
 }
 
 .dashboard-list {
   text-align: center;
-}
-
-ul {
-  list-style: none;
 }
