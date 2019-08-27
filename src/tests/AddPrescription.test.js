@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import AddPrescription from '../AddPrescription/AddPrescription';
+import AddPrescription from '../Prescription/Prescription';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
